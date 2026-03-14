@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h5>&copy;</h5>
+    <title>Hello, World!</title>
+    <style type="text/css" media="all">
+      :root{
+  --screen: #faf6eb;
+  --text: #0d181f;
+  --title: #AC45C6;
+}
+.darker{
+    --text: #faf6eb;
+  --screen: #0d181f;
+  --title: #58de49;
+}
+
+body{
+  padding: 5px;
+  text-align: center;
+  background-color: var(--screen);
+  color: var(--text);
+  font-size: 21px;
+}
+.title {
+  font-size: 40px;
+	color: var(--title);
+	font-family: Sans-Serif;
+}
+h5{
+  font-size: 20px;
+  cursor: pointer;
+}
+    </style>
+  </head>
+  <body>
+      <h1 class="title">Hello World!</h1>
+      <p id="currentTime"></p>
+      <script type="text/javascript" charset="utf-8">
+        function showTime() {
+	document.getElementById('currentTime').innerHTML = new Date().toString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+
+const h5 = document.querySelector("h5");
+const hie = document.body;
+h5.addEventListener("click", function () {
+    hie.classList.toggle("darker")
+    h5.classList.toggle("darker")
+})
+      </script>
+  </body>
+</html>
