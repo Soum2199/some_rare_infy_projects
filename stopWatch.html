@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+<h1>00:00:00</h1>
+<button type="submit" id="start">Start</button>
+<button type="submit" id="stop">Stop</button>
+
+<button type="reset" id="reset">Reset</button>
+      <script type="text/javascript" charset="utf-8">
+        
+
+const h1 = document.querySelector('h1')
+const start = document.getElementById('start')
+const stop = document.getElementById('stop')
+const reset = document.getElementById('reset')
+let sec = 0, min = 0, hr = 0;
+
+function stopWatches(){
+  sec++
+  if (sec > 59) {
+    sec = 0;
+    min++;
+    if(min > 59){
+      min = 0;
+      if (hr > 23) {
+        h1.innerHTML = "00:00:00"
+      }
+    }
+  }
+  let finalSec  =  sec >= 10 ? sec : `0${sec}`
+    let finalMin  =  min >= 10 ? min : `0${min}`
+    let finalHr  =  hr >= 10 ? hr : `0${hr}`
+    
+    h1.innerHTML = `${finalHr} : ${finalMin} : ${finalSec}`;
+}
+
+let info = null
+start.addEventListener('click', function () {
+info = setInterval( stopWatches, 1002);  
+})
+
+stop.addEventListener('click', function(){
+  clearInterval(info)
+})
+
+reset.addEventListener('click', function () {
+  sec = 0; min = 0; hr = 0;
+          h1.innerHTML = "00:00:00"
+  clearInterval(info)
+})
+      </script>
+  </body>
+</html>
