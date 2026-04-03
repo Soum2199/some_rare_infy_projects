@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hey, There!</title>
+    <style>
+body{
+  padding: 25px;
+}
+.title {
+	color: #3def69;
+}
+
+</style>
+  </head>
+  <body>
+      <h1 class="title">Todo Application.</h1>
+      <input type="text" name="" id="inputting" value="" />
+      <button type="submit" id="submit">Add Task</button>
+      <ul id="ul">
+        
+      </ul>
+      <script>
+const ul = document.getElementById('ul')
+const button = document.getElementById('submit')
+const input  = document.getElementById('inputting')
+
+button.addEventListener('click', function () {
+  let inputs = inputting.value;
+  const li = document.createElement('li')
+
+  li.innerHTML = inputs;
+  ul.append(li)
+  console.log(li)
+  // inputting.value = ''
+})
+</script>
+  </body>
+</html>
