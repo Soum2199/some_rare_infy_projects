@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style type="text/css" media="all">
+      button{
+  cursor: pointer;
+  padding: 5px 6px;
+}
+input{
+  padding: 6px 7px;
+}
+    </style>
+  </head>
+  <body>
+    <h2>Hey there</h2>
+    <input type="password" class="passShow" required/>
+    <button type="submit">Show</button>
+      <script src="script.js"></script>
+      <script type="text/javascript" charset="utf-8">
+        const passShow = document.querySelector(".passShow")
+const button = document.querySelector("button")
+let inpy = ""
+
+button.addEventListener("click", function(){
+  if(passShow.type === "text"){
+    passShow.type = "password";
+    button.innerText = "Show"
+  }
+  else if(passShow.type === "password"){
+    passShow.type = "text";
+    button.innerText = "Hide"
+  }
+})
+      </script>
+  </body>
+</html>
